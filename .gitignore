@@ -1,6 +1,5 @@
 **/*.log
-
-**/User-Manual/
+**/User_Manual/
 /**/styles.css
 /**/*SDD_v
 /**/*SRS_v
