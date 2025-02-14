@@ -1,6 +1,7 @@
 **/*.log
+**/*-*.txt
 **/User_Manual/
-/**/styles.css
-/**/*SDD_v
-/**/*SRS_v
-/**/*README
+**/styles.css
+/**/SDD_v[0-9]*
+/**/SRS_v[0-9]*
+/**/*README*
