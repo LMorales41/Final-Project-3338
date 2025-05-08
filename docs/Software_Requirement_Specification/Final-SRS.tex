@@ -1,0 +1,134 @@
+\documentclass[15pt]{article}
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+% Cover Page info
+\title{Software Requirements Specification (SRS)\\Metro Bike Share Project}
+\author{Smart City}
+\date{\today}
+
+\begin{document}
+
+% Cover Page
+\maketitle
+\newpage
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Versions Table
+\section*{Versions Table}
+\begin{longtable}{|l|l|l|}
+\hline
+Version & Date & Description \\
+\hline
+Snapshot 1 & April 1, 2025 & Initial requirements gathering completed \\
+\hline
+Snapshot 2 & April 5, 2025 & Collected all available data \\
+\hline
+Snapshot 3 & April 15, 2025 & Added legal and ethical implications (none specified in original SRS) \\
+\hline
+Final & \today & Final version done \\
+\hline
+\end{longtable}
+
+
+\newpage
+
+\section{Introduction}
+\subsection{Purpose}
+The purpose of this document is to explain in detail the functions the following applications will perform. This document will cover all aspects of the software for each project.
+
+\begin{itemize}
+    \item \textbf{Metro Bike Share Real Time (MBSRT) Web App} \\
+    The current version of the MBSRT map is 1.0.1. Added algorithm that determines the safest path using Google’s Maps API in concert with the recorded bike accidents from Geohub.
+
+    \item \textbf{MBSRT Android-App} \\
+    The current version of the MBSRT android app is 1.0.0. Being that it is the first iteration, there are no current revisions or release numbers.
+
+    \item \textbf{Bicycle Accident Visualization \& Research} \\
+    The current version of the Bicycle Accident Visualization \& Research Application is 1.0.0. Being that it is the first iteration, there are no current revisions or release numbers.
+
+    \item \textbf{Metro Bike Share Historical Data Visualization (Web-App)} \\
+    The current version of the Metro Bike Share Historical Visualization Application is 1.0.0. There are no current revisions or release numbers.
+
+    \item \textbf{Metro Bike Share Historical Data Visualization (Android-App)} \\
+    The current version of the Metro Bike Share Historical Visualization Mobile App is 1.0.0. There are no current revisions or release numbers.
+\end{itemize}
+
+
+\subsection{Intended Audience and Reading Suggestions}
+The main audience of the software requirements specifications document are developers, project managers, government workers, and testers. The SRS is organized by sections and includes divisions for each application pertaining to this SRS. Due to several applications included in the SRS, it is suggested to read through the Product Scope first to understand the purpose of each application. For developers, some of the main points to focus on are the software requirements for each application including the programming languages and APIs. Project managers can focus on overall project functionalities, including the interface, requirement specifications, and external interface requirements. Testers may review the overall description for understanding application functions and operating system environment.
+
+\newpage
+
+\section{External Interface Requirements}
+
+\subsection{User Interfaces}
+\textbf{Metro Bike Share Real Time (Web-App)}
+\begin{itemize}
+    \item Metro Bike Share real time data shall be used to create station markers on the map, as well as the station items list.
+    \item Hovering over a station marker shall display an info window with information about the corresponding station.
+    \item Hovering off a station marker shall close its info window.
+    \item User Location button shall prompt the user for their location when clicked.
+    \item Reset Map button shall be used to reset the map to its original state.
+    \item Toggle Heatmap button shall be used to toggle heatmap either on or off.
+    \item Draw Polyline button shall be toggled on or off to allow the user to draw their path by clicking anywhere on the map.
+    \item Station list item shall be highlighted, and its corresponding marker should be animated on the click of a list item.
+    \item Filter city dropdown shall display only markers with the corresponding city on the map.
+    \item Clicking on a station marker shall display directions and a polyline of how to get from the user’s location to the clicked station.
+    \item Default Google Map’s features shall work as expected.
+\end{itemize}
+
+\textbf{MBSRT Android-App}
+\begin{itemize}
+    \item Login textviews shall capture user input.
+    \item Toggling between “sign up” and “login” buttons shall either sign up or login user assuming input is valid.
+    \item Metro Bike Share real time data shall be used to create station markers on the map, as well as the station items list.
+    \item Selecting a city from spinner shall filter and display stations with only the corresponding city name.
+    \item The bottom navigation buttons shall allow the user to reset map, view list of stations, get user location and view step by step directions.
+    \item The side navigation drawer shall allow the user to click on the “my profile” button to view profile information or the sign out button to log the user out.
+\end{itemize}
+
+% Add additional UI subsections as needed...
+
+\subsection{Software Interfaces}
+\begin{itemize}
+    \item Metro Bike Share Real Time (Web-App): Maps Javascript API, Metro Bike Share API.
+    \item MBSRT Android-App: Maps Android SDK API, Metro Bike Share API.
+    \item Bicycle Accident Visualization \& Research: ArcGIS Online Javascript API 4.13, Feature Layer from LA Geohub.
+    \item Metro Bike Share Historical Data Visualization (Web-App): ArcGIS Online Javascript API, Feature Layer from ArcGIS Online services.
+    \item Metro Bike Share Historical Data Visualization (Android-App): ArcGIS Runtime SDK, Feature Layer from ArcGIS Online services.
+\end{itemize}
+
+
+\newpage
+
+\section{Legal and Ethical Considerations}
+\begin{itemize}
+    \item User data collected by the applications, such as location information, must comply with applicable privacy laws (e.g., CCPA, GDPR) and only be used for the intended purpose.
+    \item Any stored user credentials or personal data must be encrypted and securely handled.
+    \item The system must provide clear notice to users about data collection, with options to opt-in or opt-out where applicable.
+    \item Use of accident data must respect privacy guidelines; no personally identifiable information should be shown.
+    \item Ethical considerations include ensuring the accuracy of safety recommendations based on accident data to avoid misleading users.
+    \item Compliance with Google Maps and ArcGIS API terms of use is required.
+\end{itemize}
+
+\newpage
+
+\section*{Glossary}
+\begin{longtable}{|l|l|}
+\hline
+Acronym & Definition \\
+\hline
+API & Application Programming Interface \\
+UI & User Interface \\
+GIS & Geographic Information System \\
+MBSRT & Metro Bike Share Real Time \\
+\hline
+\end{longtable}
+
+\end{document}
