@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\geometry{margin=1in}
+\graphicspath{  {C:/Users/ccuahue/OneDrive - Cal State LA/Pictures/Screenshots}  }
+
+%Cover Page
+\title{Software Design Document (SDD) \\Metro Bike Share Project}
+\author{Smart City}
+\date{May 6, 2025}
+
+\begin{document}
+
+%Cover Page
+\maketitle
+\newpage
+
+%Table of Contents 
+\tableofcontents
+\newpage
+
+%Version Table
+\begin{center}
+
+\section*{Version Table}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} \\
+\hline
+Snapshot 1 & 4-24-2025 & Include all requirements\\
+\hline
+Snapshot 2 & 4-30-2025 & Revise, include more data, add a glossary\\
+\hline
+Snapshot 3 & 5-2-2025 & Add images to User Interface and System Architecture Sections\\
+\hline
+Final & 5-6-2025 & Add a reference \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+%Introduction Section
+\section{Introduction}
+\subsection{Purpose}
+This document is to explain in detail the functions that the application will perform. The document will inform readers as to what the application will do. The purpose of this product is to visualize pedestrian and bicycle data to find and identify problem areas and safest navigation routes.
+
+\subsection{Intended Audience}
+The main audience of the software requirements specifications document are developers, project managers, and testers. The SRS contains information about each project such as what the project is, what each of its UI elements should do, and what dependencies each project may have. It is suggested that you first look at the table of contents for any topics you may be looking for, if not then quickly skim the document to get a better understanding of the projects. If you are a developer or project manager it is suggested that you look into section 4 of the SRS so that you may check if project requirements are being met. If you are a tester it is suggested that you look into section 3 so that you have a better understanding of how the user interfaces should work.
+
+\subsection{Overview}
+\begin{itemize}
+	\item \textbf{Metro Bike Share Real Time(Web \& Android App)}\\
+The focus of this project is to aid in the realization of Vision 0 is the greater Los Angeles area. This is done by modeling real time Metro Bike Share stations within the city, in conjunction with bike accidents around the city. Currently the idea is to allow the user to draw the “safest” path by avoiding areas of the city where major accidents have occured.
+
+	\item \textbf{Metro Bike Share Historical Data Visualization (Web * Android App) }\\
+The purpose of this project is to help visualize the Metro Bike Share data. The stations are shown as feature layers on the map. Clicking the station displays information such as number of trips and busiest day. Station icons vary in size and color depending on what information we want to show.
+\end{itemize}
+
+%System Architecture section 
+\section{System Architecture}
+%add the images 
+\includegraphics[width=170mm,scale=0.5]{SA1}
+\includegraphics[width=170mm,scale=0.5]{SA2}
+
+\newpage
+
+%User Interface section
+\section{User Interface}
+\subsection{Overview of User Interface}
+\begin{itemize}
+	\item Zoom in and out to change visibility
+	\item Hover over markers displays an info window about the station
+	\item User location button to prompt user for their location
+	\item Reset map to its original state using reset button
+	\item Toggle heat map on \& off
+	\item Draw a Polyline to allow user to draw their path by clicking anywhere on the map. This can toggle on/off
+	\item Click on station to be highlighted \& its corresponding marker will be animated
+	\item Filter by city with the drop down menu
+	\item Click on a station marker to display directions \& a polyline of how to get from the user’s location to the clicked station
+	\item Use google map’s default features
+\end{itemize}
+\subsection{Screen Frameworks or Images}
+\includegraphics[width=170mm,scale=0.5]{UI1}
+\includegraphics[width=170mm,scale=0.5]{UI2}
+\includegraphics[width=170mm,scale=0.5]{UI3}
+\includegraphics[width=170mm,scale=0.5]{UI4}
+\includegraphics[height = 110mm,width=145mm,scale=0.5]{UI5}\\
+\includegraphics[height = 110mm,width=145mm,scale=0.5]{UI6}
+
+\subsection{User Interface Flow Model}
+\includegraphics[width=170mm,scale=0.5]{UI7}\\
+
+%Glossary section 
+\section{Glossary}
+\begin{tabular}{|c|c|}
+\hline
+SRS & Specific Requirements Specifications\\
+\hline
+SDD & Software Design Document\\
+\hline
+\end{tabular}
+
+%Reference section
+\section{References}
+\begin{tabular}{|c|p{10cm}|}
+\hline
+Google Maps API & The Maps JavaScript API lets you customize maps with your own content and imagery for display on web pages and mobile devices. The Maps JavaScript API features four basic map types (roadmap, satellite, hybrid, and terrain) which you can modify using layers and styles, controls and events, and various services and libraries. \href{https://developers.google.com/maps/documentation/javascript/tutorial}{link}\\
+\hline
+Metro Bike Data & Anonymized Metro Bike Share trip data for data collection \href{https://bikeshare.metro.net/about/data/} {link}\\
+\hline
+Google's Direction API & Used to retrieve a JSON object containing directions information between points \href{https://developers.google.com/maps/documentation/directions/start} {link}\\
+\hline
+Maps SDK for Android & Adds functionality to elements within the map \href{https://developers.google.com/maps/documentation/android-sdk/intro} {link}\\
+\hline
+GeoHub & Data collection for the city of Los Angeles \href{http://geohub.lacity.org/} {link}\\
+\hline
+Android Studio & Used to develop MBSRT android version \href{https://developer.android.com/docs} {link}\\
+\hline
+Firebase & Used to authenticate and store user data. \href{https://firebase.google.com/} {link}\\
+\hline
+Jupyter Notebook & Organize and manipulate data. \href{https://jupyter.org/} {link}\\
+\hline
+
+\end{tabular}
+\end{document}
