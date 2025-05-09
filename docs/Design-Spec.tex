@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\title{Smart City Project Stack Breakdown}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{a. Frontend (Client-side)}
+
+\subsection*{● Frameworks/Libraries (for modern JavaScript-based web development):}
+
+\begin{itemize}
+  \item \textbf{React.js (Library):} A JavaScript library for building user interfaces.
+  \begin{itemize}
+    \item \textbf{Dependencies:}
+    \begin{itemize}
+      \item react
+      \item react-dom
+      \item react-scripts
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection*{● Package Managers:}
+\begin{itemize}
+  \item \textbf{npm} or \textbf{yarn}: Node.js package managers for installing dependencies.
+\end{itemize}
+
+\subsection*{● Example:}
+Stored in \texttt{./frontend}, served on port \texttt{3000}. Docker image uses \texttt{node:18}.
+
+\section*{b. Backend (Server-side)}
+
+\subsection*{● Node.js (JavaScript runtime):}
+
+\begin{itemize}
+  \item \textbf{Express.js:} A minimal and flexible Node.js web application framework.
+  \begin{itemize}
+    \item \textbf{Dependencies:}
+    \begin{itemize}
+      \item express
+      \item body-parser
+      \item cors
+      \item dotenv
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsection*{● Database:}
+\begin{itemize}
+  \item \textbf{MongoDB} (NoSQL)
+\end{itemize}
+
+\subsection*{● Example:}
+Stored in \texttt{./backend}, served on port \texttt{5000}. Docker image uses \texttt{node:18}. Connects to MongoDB via \texttt{MONGO\_URL}.
+
+\section*{c. Machine Learning Service (Python-based)}
+
+\subsection*{● Language:}
+\begin{itemize}
+  \item Python 3.11
+\end{itemize}
+
+\subsection*{● Libraries:}
+\begin{itemize}
+  \item numpy
+  \item pandas
+  \item scikit-learn
+  \item flask or fastapi
+  \item joblib
+\end{itemize}
+
+\subsection*{● Purpose:}
+Provides data analytics or predictive functionality to the backend or frontend.
+
+\subsection*{● Example:}
+Stored in \texttt{./ml}, run with \texttt{python main.py}. Docker image uses \texttt{python:3.11}.
+
+\section*{d. Database}
+
+\subsection*{● MongoDB (NoSQL Database):}
+\begin{itemize}
+  \item Stores persistent application data.
+  \item Default port: \texttt{27017}
+  \item Volume mounted to: \texttt{mongo-data:/data/db}
+\end{itemize}
+
+\section*{e. Hosting and Deployment}
+
+\subsection*{● Web Server:}
+\begin{itemize}
+  \item \textbf{NGINX:} Used as a reverse proxy to serve static content and forward API requests.
+\end{itemize}
+
+\subsection*{● Deployment Options:}
+\begin{itemize}
+  \item \textbf{Docker Compose:} Local orchestration using the \texttt{docker-compose.yml} file.
+  \item \textbf{Cloud Platforms:}
+  \begin{itemize}
+    \item AWS (EC2, S3, RDS)
+    \item Heroku
+    \item DigitalOcean
+  \end{itemize}
+\end{itemize}
+
+\section*{f. Volumes and Configurations}
+\begin{itemize}
+  \item \textbf{Volumes:}
+  \begin{itemize}
+    \item mongo-data → Persistent MongoDB data
+  \end{itemize}
+  \item \textbf{Configuration Files:}
+  \begin{itemize}
+    \item \texttt{nginx.conf} — Custom reverse proxy settings
+    \item \texttt{.env} files (recommended for managing secrets)
+  \end{itemize}
+\end{itemize}
+
+\end{document}
